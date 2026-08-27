@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Assistente inteligente para colaboradores do call center da Light." />
+  <title>Light Assist | Central do Colaborador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-icon">L</div>
+      <div><strong>LIGHT</strong><span>Assist</span></div>
+    </div>
+
+    <div class="user-card">
+      <div class="avatar">MC</div>
+      <div><strong>Mariana Costa</strong><span>Agente de atendimento</span></div>
+      <span class="online-dot"></span>
+    </div>
+
+    <nav class="main-nav" aria-label="Navegação principal">
+      <p class="nav-label">CENTRAL DE TRABALHO</p>
+      <a class="nav-item active" href="#chat"><span>✦</span> Assistente IA</a>
+      <a class="nav-item" href="#knowledge"><span>▤</span> Base de conhecimento</a>
+      <a class="nav-item" href="#history"><span>◷</span> Histórico</a>
+      <p class="nav-label">FERRAMENTAS</p>
+      <a class="nav-item" href="#scripts"><span>⌁</span> Scripts de atendimento</a>
+      <a class="nav-item" href="#alerts"><span>♧</span> Comunicados</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="support-box">
+        <span class="support-icon">?</span>
+        <div><strong>Precisa de ajuda?</strong><small>Fale com o suporte interno</small></div>
+      </div>
+      <button class="logout-button">↪ Sair da conta</button>
+    </div>
+  </aside>
+
+  <main class="page-content">
+    <header class="topbar">
+      <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">☰</button>
+      <div>
+        <p class="breadcrumb">Central de trabalho / <strong>Assistente IA</strong></p>
+        <h1>Olá, Mariana <span>👋</span></h1>
+      </div>
+      <div class="topbar-actions">
+        <button class="icon-button" title="Notificações" aria-label="Notificações">♢<b>3</b></button>
+        <div class="shift-status" id="shiftStatus"><i></i> <span id="statusText">Em atendimento</span> <span>⌄</span></div>
+      </div>
+    </header>
+
+    <section class="welcome-banner">
+      <div>
+        <span class="banner-tag">NOVIDADE DA EQUIPE</span>
+        <h2>Atenda melhor com o <em>Light Assist.</em></h2>
+        <p>Consulte informações, encontre respostas e resolva situações com mais agilidade.</p>
+      </div>
+      <div class="banner-illustration"><span>✦</span><span>✧</span><strong>IA</strong></div>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="main-column" id="chat">
+        <div class="section-title">
+          <div><p class="overline">SEU COPILOTO DE ATENDIMENTO</p><h2>Como posso ajudar?</h2></div>
+          <span class="ai-status"><i></i> IA online</span>
+        </div>
+
+        <div class="chat-panel">
+          <div class="chat-header">
+            <div class="ai-avatar">✦</div>
+            <div><strong>Light Assist</strong><span>Especialista em atendimento Light</span></div>
+            <button class="clear-chat" id="transferSupport" type="button">Transferir para suporte</button>
+            <button class="clear-chat" id="clearChat" type="button">Limpar conversa</button>
+          </div>
+
+          <div class="conversation" id="conversation">
+            <div class="message assistant-message">
+              <div class="message-avatar">✦</div>
+              <div class="message-content">
+                <span class="message-author">Light Assist <time>Agora</time></span>
+                <p>Olá! Sou seu assistente de apoio. Posso ajudar com procedimentos, segunda via, falta de energia, negociação de débitos e muito mais.</p>
+                <div class="source-chip">▣ Base Light • Atualizada hoje</div>
+              </div>
+            </div>
+
+            <div class="quick-prompts">
+              <button data-question="O cliente está sem energia. Qual procedimento devo seguir?">⚡ Falta de energia</button>
+              <button data-question="Como orientar o cliente a emitir a segunda via da conta?">▤ Segunda via</button>
+              <button data-question="Quais documentos são necessários para trocar a titularidade?">♙ Troca de titularidade</button>
+            </div>
+          </div>
+
+          <form class="question-box" id="questionForm">
+            <textarea id="questionInput" rows="3" placeholder="Digite sua pergunta para o assistente..." aria-label="Digite sua pergunta"></textarea>
+            <div class="question-tools">
+              <div>
+                <button type="button" class="tool-button" title="Anexar arquivo">⊕</button>
+                <button type="button" class="tool-button" title="Inserir modelo">▱</button>
+                <span>Enter para enviar · Shift + Enter para nova linha</span>
+              </div>
+              <button class="send-button" type="submit">Enviar <span>➤</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <aside class="right-column">
+        <section class="side-card" id="alerts">
+          <div class="card-heading"><h3>Resumo do dia</h3><button type="button">•••</button></div>
+          <div class="metrics">
+            <div><strong>42</strong><span>Atendimentos</span><small class="positive">↑ 12% hoje</small></div>
+            <div><strong>94%</strong><span>Resolvidos</span><small class="positive">↑ 4% hoje</small></div>
+          </div>
+          <div class="progress-label"><span>Meta diária</span><strong>70%</strong></div>
+          <div class="progress-bar"><i></i></div>
+        </section>
+
+        <section class="side-card" id="knowledge">
+          <div class="card-heading"><h3>Acesso rápido</h3><a href="#knowledge">Ver tudo</a></div>
+          <div class="knowledge-list">
+            <a href="#chat" data-question="Quais são os canais oficiais de atendimento da Light?"><span class="quick-icon blue">▤</span><div><strong>Canais de atendimento</strong><small>Telefones, site e aplicativo</small></div><b>›</b></a>
+            <a href="#chat" data-question="Como consultar uma conta em aberto do cliente?"><span class="quick-icon yellow">▣</span><div><strong>Consulta de débitos</strong><small>Procedimentos financeiros</small></div><b>›</b></a>
+            <a href="#chat" data-question="Qual o prazo para religação após o pagamento?"><span class="quick-icon green">◷</span><div><strong>Religação</strong><small>Prazos e orientações</small></div><b>›</b></a>
+            <a href="#chat" data-question="Como registrar uma reclamação do cliente?"><span class="quick-icon purple">♧</span><div><strong>Registro de reclamação</strong><small>Fluxo de atendimento</small></div><b>›</b></a>
+          </div>
+        </section>
+
+        <section class="tip-card">
+          <span class="tip-light">✦</span>
+          <p class="overline">DICA DE ATENDIMENTO</p>
+          <h3>Humanize a conversa</h3>
+          <p>Antes de apresentar a solução, confirme se entendeu completamente a necessidade do cliente.</p>
+        </section>
+      </aside>
+    </section>
+
+    <section class="bottom-section" id="history">
+      <div class="bottom-heading">
+        <div><p class="overline">ACESSADOS RECENTEMENTE</p><h2>Continue de onde parou</h2></div>
+        <a href="#history">Ver histórico completo →</a>
+      </div>
+      <div class="history-grid">
+        <article><span class="history-icon">⚡</span><div><strong>Procedimento para falta de energia</strong><p>Consultado há 8 minutos · Operações</p></div><b>›</b></article>
+        <article><span class="history-icon orange">▤</span><div><strong>Negociação de débitos</strong><p>Consultado ontem · Financeiro</p></div><b>›</b></article>
+        <article><span class="history-icon green">♙</span><div><strong>Atualização cadastral</strong><p>Consultado ontem · Cadastro</p></div><b>›</b></article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Light Assist · Ambiente interno</span>
+      <span>Versão 2.4.0 · <a href="#alerts">Status dos sistemas: <b>Normal</b></a></span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
